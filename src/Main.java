@@ -37,12 +37,11 @@ public class Main {
                     motor.nr_cilindrii = sc.nextInt();
                     motor.capacitate = sc.nextFloat();
                     int putere = sc.nextInt();
-                    String cutie_v = sc.next();
                     String tractiune = sc.next();
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    Sedan sedan_curent = new Sedan(an_fab, brand, model, culoare, motor, cutie_v, putere, tractiune, masa, val);
+                    Sedan sedan_curent = new Sedan(an_fab, brand, model, culoare, motor, putere, tractiune, masa, val);
                     parcare.add(sedan_curent);
                     break;
                 }
@@ -57,12 +56,11 @@ public class Main {
                     motor.nr_cilindrii = sc.nextInt();
                     motor.capacitate = sc.nextFloat();
                     int putere = sc.nextInt();
-                    String cutie_v = sc.next();
                     int masa_rem = sc.nextInt();
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    TIR tir_curent = new TIR(an_fab, brand, model, culoare, motor, cutie_v, putere, masa_rem, masa, val);
+                    TIR tir_curent = new TIR(an_fab, brand, model, culoare, motor, putere, masa_rem, masa, val);
                     parcare.add(tir_curent);
                     break;
                 }
@@ -77,12 +75,11 @@ public class Main {
                     motor.nr_cilindrii = sc.nextInt();
                     motor.capacitate = sc.nextFloat();
                     int putere = sc.nextInt();
-                    String cutie_v = sc.next();
                     String tip_teren = sc.next();
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    ATV atv_curent = new ATV(an_fab, brand, model, culoare, motor, cutie_v, putere, tip_teren, masa, val);
+                    ATV atv_curent = new ATV(an_fab, brand, model, culoare, motor, putere, tip_teren, masa, val);
                     parcare.add(atv_curent);
                     break;
                 }
@@ -97,12 +94,11 @@ public class Main {
                     motor.nr_cilindrii = sc.nextInt();
                     motor.capacitate = sc.nextFloat();
                     int putere = sc.nextInt();
-                    String cutie_v = sc.next();
                     String clasa = sc.next();
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    Motocicleta moto_curent = new Motocicleta(an_fab, brand, model, culoare, motor, cutie_v, putere, clasa, masa, val);
+                    Motocicleta moto_curent = new Motocicleta(an_fab, brand, model, culoare, motor, putere, clasa, masa, val);
                     parcare.add(moto_curent);
                     break;
                 }

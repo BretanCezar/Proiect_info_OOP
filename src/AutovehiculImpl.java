@@ -10,7 +10,7 @@ public interface AutovehiculImpl {
     String getNumeBrand();
     String getModel();
     String getCuloare();
-    String getCutieViteze();
+    int getNumarRoti();
 
     void setAnFabricatie(int an_fabricatie);
     void setPutere(int putere);
@@ -22,6 +22,5 @@ public interface AutovehiculImpl {
     void setNumeBrand(String denumire);
     void setModel(String model);
     void setCuloare(String culoare);
-    void setCutieViteze(String cutie_viteze);
 
 }
