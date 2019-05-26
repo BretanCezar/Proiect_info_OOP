@@ -2,10 +2,10 @@ class Sedan extends Autovehicul {
 
     private String tractiune;
 
-    Sedan(int an_fabricatie, int putere, int masa, float pret, Motor motor, String brand, String model, String culoare, String cutie_viteze, String volum_portbagaj) {
+    Sedan(int an_fabricatie, String brand, String model, String culoare, Motor motor,  String cutie_viteze, int putere, String tractiune, int masa, float valoare) {
 
-        super(an_fabricatie, putere, masa, pret, motor, brand, model, culoare, cutie_viteze);
+        super(an_fabricatie, brand, model, culoare, motor, cutie_viteze, putere, masa, valoare);
         this.numar_roti = 4;
-        this.tractiune= volum_portbagaj;
+        this.tractiune= tractiune;
     }
 }
