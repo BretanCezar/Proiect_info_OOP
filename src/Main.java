@@ -5,7 +5,8 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        File input = new File("D:\\Proiecte info\\Proiect_info_OOP\\src\\parcare.txt");
+        File input = new File("D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); //Insert current input file path
+        // D:\\Proiecte info\\Proiect_info_OOP\\src\\parcare.txt
         Scanner sc = new Scanner(input);
 
 
