@@ -3,10 +3,29 @@ import java.util.*;
 
 public class Main {
 
+    static void afisare(int i, ArrayList<Autovehicul> p) {
+
+        System.out.print(p.get(i).getAnFabricatie());
+        System.out.print(" ");
+        System.out.print(p.get(i).getNumeBrand());
+        System.out.print(" ");
+        System.out.print(p.get(i).getModel());
+        System.out.print('\n');
+    }
+
+    static void nr_autovehicule_de_vechime_max(int v, int n, ArrayList<Autovehicul> p) {
+
+        for(int i=0; i<n; i++) {
+
+            if(2019-p.get(i).getAnFabricatie()<=v) afisare(i, p);
+        }
+
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
-        File input = new File("D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); //Insert current input file path
-        // D:\\Proiecte info\\Proiect_info_OOP\\src\\parcare.txt
+        File input = new File("D:\\Proiecte info\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); //Insert current input file path
+        // D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt
         Scanner sc = new Scanner(input);
 
 
@@ -104,11 +123,11 @@ public class Main {
                     break;
                 }
             }
+
         }
-        System.out.print(parcare.get(0).getAnFabricatie());
-        System.out.print(" ");
-        System.out.print(parcare.get(0).getNumeBrand());
-        System.out.print(" ");
-        System.out.print(parcare.get(0).getModel());
+
+        nr_autovehicule_de_vechime_max(20, nrVehicule, parcare);
+
+
     }
 }
