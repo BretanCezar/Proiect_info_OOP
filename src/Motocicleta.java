@@ -2,9 +2,9 @@ class Motocicleta extends Autovehicul implements MotocicletaImpl {
 
     private String clasa;
 
-    Motocicleta(int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, String clasa, int masa, float valoare) {
+    Motocicleta(String id, int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, String clasa, int masa, float valoare) {
 
-        super(an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
+        super(id, an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
         this.numar_roti = 2;
         this.clasa = clasa;
 

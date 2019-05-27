@@ -1,16 +1,18 @@
 public interface AutovehiculImpl {
 
+
     int getAnFabricatie();
     int getPutere();
     int getMasa();
-    float getValoare();
-    String getConfig();
+    int getNumarRoti();
     int getNrCilindrii();
+    float getValoare();
     float getCapacitate();
+    String getConfig();
+    String getId();
     String getNumeBrand();
     String getModel();
     String getCuloare();
-    int getNumarRoti();
 
     void setAnFabricatie(int an_fabricatie);
     void setPutere(int putere);
@@ -22,5 +24,6 @@ public interface AutovehiculImpl {
     void setNumeBrand(String denumire);
     void setModel(String model);
     void setCuloare(String culoare);
+    void setId(String id);
 
 }

@@ -8,13 +8,15 @@ public class Autovehicul implements AutovehiculImpl {
     protected int numar_roti;
     private float valoare;
     private Motor motor;
+    protected String id;
     private String brand;
     private String model;
     private String culoare;
 
     //CONSTRUCTOR
 
-    Autovehicul(int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa, float valoare){
+    Autovehicul(String id, int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa, float valoare){
+        this.id = id;
         this.an_fabricatie = an_fabricatie;
         this.brand = brand;
         this.putere = putere;
@@ -27,6 +29,7 @@ public class Autovehicul implements AutovehiculImpl {
 
     //GETTERS
 
+    public String getId(){ return this.id; }
     public int getAnFabricatie(){ return this.an_fabricatie; }
     public int getPutere(){ return this.putere; }
     public int getMasa(){ return this.masa; }
@@ -41,6 +44,7 @@ public class Autovehicul implements AutovehiculImpl {
 
     //SETTERS
 
+    public void setId(String id){ this.id = id; }
     public void setAnFabricatie(int an_fabricatie){ this.an_fabricatie = an_fabricatie; }
     public void setPutere(int putere){ this.putere = putere; }
     public void setMasa(int masa){ this.masa = masa; }
@@ -60,4 +64,18 @@ class Motor {
     float capacitate;
 }
 
+class FrecvCuloare {
+
+    int rosu;
+    int portocaliu;
+    int galben;
+    int verde;
+    int albastru;
+    int mov;
+    int argintiu;
+    int maro;
+    int negru;
+    int alb;
+
+}
 
