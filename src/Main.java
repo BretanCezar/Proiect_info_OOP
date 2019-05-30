@@ -28,17 +28,14 @@ public class Main {
         System.out.print('\n');
     }
 
-    private static void autovehicule_de_putere_min(int x, int n, ArrayList<Autovehicul> p){
+    private static void vehicule_de_putere_capacit(int cai, float capmax, int n, ArrayList<Autovehicul> p){
 
-        int contor = 0;
         for(int i=0; i<n; i++){
 
-            if(p.get(i).getPutere() >= x) {
-                contor++;
+            if(p.get(i).getPutere() >= cai && p.get(i).getCapacitate() <= capmax) {
                 afisare(i, p);
             }
         }
-        System.out.print(contor);
         System.out.print('\n');
     }
 
@@ -160,6 +157,15 @@ public class Main {
 
         }
     }
+
+    static void afisare_vehicule_brand(String br, int n, ArrayList<Autovehicul> p){
+
+        for(int i=0;i<n;i++){
+
+            if(p.get(i).getNumeBrand().equals(br)) afisare(i, p);
+        }
+    }
+
 
     public static void main(String[] args) throws FileNotFoundException {
 

@@ -26,4 +26,6 @@ public interface AutovehiculImpl {
     void setCuloare(String culoare);
     void setId(String id);
 
+    float valoareRelativa(Autovehicul a);
+
 }
