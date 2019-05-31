@@ -187,11 +187,11 @@ public class Main {
 
         int nrVehicule = sc.nextInt();
         ArrayList<Autovehicul> parcare = new ArrayList<>(nrVehicule);
-        for(int i=0;i<nrVehicule;i++) {
+        for (int i = 0; i < nrVehicule; i++) {
 
             String tip_curent = sc.next();
-            switch (tip_curent){
-                case ("S"):{
+            switch (tip_curent) {
+                case ("S"): {
 
                     String id = "S";
                     int an_fab = sc.nextInt();
@@ -211,7 +211,7 @@ public class Main {
                     parcare.add(sedan_curent);
                     break;
                 }
-                case ("T"):{
+                case ("T"): {
 
                     String id = "T";
                     int an_fab = sc.nextInt();
@@ -231,7 +231,7 @@ public class Main {
                     parcare.add(tir_curent);
                     break;
                 }
-                case ("A"):{
+                case ("A"): {
 
                     String id = "A";
                     int an_fab = sc.nextInt();
@@ -251,7 +251,7 @@ public class Main {
                     parcare.add(atv_curent);
                     break;
                 }
-                case ("M"):{
+                case ("M"): {
 
                     String id = "M";
                     int an_fab = sc.nextInt();
@@ -275,8 +275,41 @@ public class Main {
 
         }
 
+        System.out.print("Bun venit in parcarea dumneavoastra.");
+        System.out.print('\n');
+        for (int i = 0; i < nrVehicule; i++) {
 
-
-
+            System.out.print(i+1);
+            System.out.print(") ");
+            System.out.print(parcare.get(i).getAnFabricatie());
+            System.out.print(" ");
+            System.out.print(parcare.get(i).getNumeBrand());
+            System.out.print(" ");
+            System.out.print(parcare.get(i).getModel());
+            System.out.print('\n');
+        }
+        System.out.print('\n');
+        System.out.print("Ce ati dori sa aflati?");
+        System.out.print('\n');
+        System.out.print('\n');
+        System.out.print("1)Cea mai folosita culoare.");
+        System.out.print('\n');
+        System.out.print("2)Ce masini au puterea motorului de x cai putere.");
+        System.out.print('\n');
+        System.out.print("3)Masinile de brand x.");
+        System.out.print('\n');
+        System.out.print("4)Masinile ce se afla intre doua preturi alese de dumneavoastra.");
+        System.out.print('\n');
+        System.out.print("5)Cate autovehicule au x roti.");
+        System.out.print('\n');
+        System.out.print("6)Masinile cu cel mult x ani.");
+        System.out.print('\n');
     }
+    int v = sc.nextInt();
+
+    if(v==1) {
+        cea_mai_folosita_culoare(nparcare)
+    }
+
+
 }
