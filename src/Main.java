@@ -1,8 +1,17 @@
+/*
+    Pt. executare via CMD:
+
+    > cd *path*\Proiect_info_OOP\out\production\proiect_info_oop
+    > java Main
+
+ */
+
 import java.io.*;
 import java.util.*;
 
 public class Main {
 
+    /// Functie afisare autovehicul : AnFabricatie Brand Model
     private static void afisare(int i, ArrayList<Autovehicul> p) {
 
         System.out.print(i+1);
@@ -15,33 +24,56 @@ public class Main {
         System.out.print('\n');
     }
 
-    private static void autovehicule_de_vechime_max(int v, int n, ArrayList<Autovehicul> p) {
+    /// Functie resetare consola si rescriere a interfetei
+    public static void clearScreen() {
 
-        int contor = 0;
-        for(int i=0; i<n; i++) {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.print('\n');
+        System.out.print("Bun venit in parcarea dumneavoastra. Pentru a incepe, apasati ENTER.");
+        System.out.print('\n');
 
-            if (2019 - p.get(i).getAnFabricatie() <= v) {
-
-                contor++;
-                afisare(i, p);
-            }
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        System.out.print(contor);
+
+        System.out.print("Ce ati dori sa aflati? Pentru a termina programul, scrieti 0. Pentru a curata consola, scrieti -1.");
+        System.out.print('\n');
+        System.out.print('\n');
+        System.out.print("1) Toate autovehiculele din parcare.");
+        System.out.print('\n');
+        System.out.print("2) Cea mai frecventa culoare.");
+        System.out.print('\n');
+        System.out.print("3) Autovehiculele care au puterea motorului de cel putin x cai putere.");
+        System.out.print('\n');
+        System.out.print("4) Autovehiculele de brand-ul x.");
+        System.out.print('\n');
+        System.out.print("5) Autovehiculele ce se afla ca valoare intre doua preturi x si y in €.");
+        System.out.print('\n');
+        System.out.print("6) Cate autovehicule au x roti.");
+        System.out.print('\n');
+        System.out.print("7) Autovehiculele cu cel mult x ani vechime.");
+        System.out.print('\n');
+        System.out.print("8) Autovehiculele cu masa maxima x.");
+        System.out.print('\n');
+        System.out.print("9) Cate autovehicule au configuratia motorului x");
         System.out.print('\n');
     }
 
-    private static void vehicule_de_putere_min(int cai, int n, ArrayList<Autovehicul> p){
+    /// FUNCTII APELABILE IN INTERFATA CONSOLEI
 
-        for(int i=0; i<n; i++){
+    /// 1.
+    private static void toate_autovehiculele(int n, ArrayList<Autovehicul> p){
 
-            if(p.get(i).getPutere() >= cai) {
-                afisare(i, p);
-            }
+        for (int i = 0; i < n; i++) {
+
+            afisare(i, p);
         }
-        System.out.print('\n');
     }
 
-
+    /// 2.
     private static void cea_mai_folosita_culoare(int n, ArrayList<Autovehicul> p) {
 
         FrecvCuloare fr = new FrecvCuloare();
@@ -94,7 +126,7 @@ public class Main {
         }
 
         int contmax = 0;
-        String max = "muie";
+        String max = "";
 
         if(fr.portocaliu > contmax){
             contmax = fr.portocaliu;
@@ -140,34 +172,82 @@ public class Main {
         System.out.print('\n');
     }
 
-    static void nr_autovehicule_cu_roti(int r, int n, ArrayList<Autovehicul> p){
+    /// 3.
+    private static void autovehicule_putere_min(int cai, int n, ArrayList<Autovehicul> p){
 
-        int contor = 0;
-        for(int i=0; i<n; i++){
-            if(p.get(i).getNumarRoti() == r){
-                contor++;
-            }
-        }
-        System.out.print(contor);
         System.out.print('\n');
-    }
+        for(int i = 0; i < n; i++){
 
-    static void price_range(float st, float dr, int n, ArrayList<Autovehicul> p){
-
-        for(int i=0; i<n; i++) {
-            if(p.get(i).getValoare()<=dr && p.get(i).getValoare()>=st) afisare(i, p);
-
+            if(p.get(i).getPutere() >= cai) afisare(i, p);
         }
     }
 
-    static void afisare_vehicule_brand(String br, int n, ArrayList<Autovehicul> p){
+    /// 4.
+    private static void autovehicule_brand(String br, int n, ArrayList<Autovehicul> p){
 
-        for(int i=0;i<n;i++){
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
 
             if(p.get(i).getNumeBrand().equals(br)) afisare(i, p);
         }
     }
 
+    /// 5.
+    private static void autovehicule_in_price_range(float st, float dr, int n, ArrayList<Autovehicul> p){
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++) {
+
+            if(p.get(i).getValoare()<=dr && p.get(i).getValoare()>=st) afisare(i, p);
+        }
+    }
+
+    /// 6.
+    private static void nr_autovehicule_cu_roti(int r, int n, ArrayList<Autovehicul> p){
+
+        int contor = 0;
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+            if(p.get(i).getNumarRoti() == r) contor++;
+
+        }
+        System.out.print(contor);
+        System.out.print(" autovehicule");
+        System.out.print('\n');
+    }
+
+    /// 7.
+    private static void autovehicule_de_vechime_max(int v, int n, ArrayList<Autovehicul> p) {
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++) {
+
+            if(2019 - p.get(i).getAnFabricatie() <= v) afisare(i, p);
+        }
+    }
+
+    /// 8.
+    private static void autovehicule_de_masa_max(int m, int n, ArrayList<Autovehicul> p) {
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getMasa() <= m) afisare(i, p);
+        }
+    }
+
+    /// 9.
+    private static void nr_autovehicule_de_config_motor(String c, int n, ArrayList<Autovehicul> p){
+
+        int contor = 0;
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getConfig().equals(c)) contor++;
+        }
+        System.out.print(contor);
+        System.out.print(" autovehicule");
+        System.out.print('\n');
+    }
 
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -277,106 +357,106 @@ public class Main {
                     break;
                 }
             }
-
         }
 
         Scanner cin = new Scanner(System.in);
 
-        System.out.print("Bun venit in parcarea dumneavoastra. Pentru a incepe, apasati ENTER.");
-
-        try {
-            System.in.read();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        System.out.print('\n');
-
-        for (int i = 0; i < nrVehicule; i++) {
-
-            System.out.print(i+1);
-            System.out.print(". ");
-            afisare(i, parcare);
-        }
-        System.out.print('\n');
-        System.out.print("Ce ati dori sa aflati? Pentru a termina programul, apasati 0.");
-        System.out.print('\n');
-        System.out.print('\n');
-        System.out.print("1) Cea mai folosita culoare.");
-        System.out.print('\n');
-        System.out.print("2) Ce masini au puterea motorului de cel putin x cai putere.");
-        System.out.print('\n');
-        System.out.print("3) Masinile de brand x.");
-        System.out.print('\n');
-        System.out.print("4) Masinile ce se afla ca valoare intre doua preturi alese de dumneavoastra in €.");
-        System.out.print('\n');
-        System.out.print("5) Cate autovehicule au x roti.");
-        System.out.print('\n');
-        System.out.print("6) Masinile cu cel mult x ani vechime.");
-        System.out.print('\n');
-
-        System.out.print('\n');
+        clearScreen();
 
         int optiune;
 
         do {
 
+            System.out.print('\n');
+            System.out.print("Inserati numar comanda: ");
+
             optiune = cin.nextInt();
+
             switch (optiune){
 
+                case(-1):{
+
+                    clearScreen();
+                    break;
+                }
                 case(1):{
 
-                    cea_mai_folosita_culoare(nrVehicule, parcare);
+                    System.out.print('\n');
+                    toate_autovehiculele(nrVehicule, parcare);
                     break;
                 }
                 case(2):{
 
-                    System.out.print("Puterea minima: ");
-                    int min = cin.nextInt();
-                    vehicule_de_putere_min(min, nrVehicule, parcare);
+                    System.out.print('\n');
+                    cea_mai_folosita_culoare(nrVehicule, parcare);
                     break;
                 }
                 case(3):{
 
-                    System.out.print("Brand: ");
-                    String brand = cin.next();
-                    afisare_vehicule_brand(brand, nrVehicule, parcare);
+                    System.out.print('\n');
+                    System.out.print("Puterea minima: ");
+                    int min = cin.nextInt();
+                    autovehicule_putere_min(min, nrVehicule, parcare);
                     break;
                 }
                 case(4):{
 
-                    System.out.print("Valoarea minima si maxima: ");
-                    float min = cin.nextInt();
-                    float max = cin.nextInt();
-                    price_range(min, max, nrVehicule, parcare);
+                    System.out.print('\n');
+                    System.out.print("Brand: ");
+                    String brand = cin.next();
+                    autovehicule_brand(brand, nrVehicule, parcare);
                     break;
                 }
                 case(5):{
 
+                    System.out.print('\n');
+                    System.out.print("Valoarea minima si maxima: ");
+                    float min = cin.nextInt();
+                    float max = cin.nextInt();
+                    autovehicule_in_price_range(min, max, nrVehicule, parcare);
+                    break;
+                }
+                case(6):{
+
+                    System.out.print('\n');
                     System.out.print("Numar roti: ");
                     int roti = cin.nextInt();
                     nr_autovehicule_cu_roti(roti, nrVehicule, parcare);
                     break;
                 }
-                case(6):{
+                case(7):{
 
-                    System.out.print("Maxim ani vechime");
+                    System.out.print('\n');
+                    System.out.print("Maxim ani vechime: ");
                     int ani = cin.nextInt();
                     autovehicule_de_vechime_max(ani, nrVehicule, parcare);
                     break;
                 }
+                case(8):{
 
+                    System.out.print('\n');
+                    System.out.print("Masa maxima: ");
+                    int masa = cin.nextInt();
+                    autovehicule_de_masa_max(masa, nrVehicule, parcare);
+                    break;
+                }
+                case(9):{
+
+                    System.out.print('\n');
+                    System.out.print("Configuratie motor [L/V/W/B]: ");
+                    String c = cin.next();
+                    System.out.print('\n');
+                    nr_autovehicule_de_config_motor(c, nrVehicule, parcare);
+                    break;
+                }
                 default:{
                     cin.close();
                 }
+
             }
         }
         while(optiune!=0);
 
-
-
     }
-
 
 }
