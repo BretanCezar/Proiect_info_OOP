@@ -55,7 +55,6 @@ public class Autovehicul implements AutovehiculImpl {
     public void setNumeBrand(String denumire){ this.brand = denumire; }
     public void setModel(String model){ this.model = model; }
     public void setCuloare(String culoare){ this.culoare = culoare; }
-
     public float valoareRelativa (Autovehicul a){
 
         return this.valoare - a.valoare;
