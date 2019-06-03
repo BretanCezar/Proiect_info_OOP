@@ -5,7 +5,6 @@
     > java Main
 
  */
-
 import java.io.*;
 import java.util.*;
 
@@ -168,6 +167,8 @@ public class Main {
             contmax = fr.verde;
             max = "Verde";
         }
+        System.out.print(contmax);
+        System.out.print(" autovehicule de culoare ");
         System.out.print(max);
         System.out.print('\n');
     }
