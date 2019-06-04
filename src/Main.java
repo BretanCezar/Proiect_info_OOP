@@ -4,7 +4,7 @@
     > cd *path*\Proiect_info_OOP\out\production\proiect_info_oop
     > java Main
 
- */
+*/
 import java.io.*;
 import java.util.*;
 
@@ -23,7 +23,9 @@ public class Main {
         System.out.print('\n');
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     /// Functie resetare consola si rescriere a interfetei
+
     private static void clearScreen() {
 
         System.out.print("\033[H\033[2J");
@@ -33,7 +35,7 @@ public class Main {
         System.out.print('\n');
 
         try {
-            //noinspection ResultOfMethodCallIgnored
+
             System.in.read();
         } catch (IOException e) {
             e.printStackTrace();
@@ -156,7 +158,7 @@ public class Main {
         }
         if(fr.galben > contmax){
             contmax = fr.galben;
-            max = "Gaben";
+            max = "Galben";
         }
         if(fr.argintiu > contmax){
             contmax = fr.argintiu;
@@ -219,7 +221,7 @@ public class Main {
         System.out.print('\n');
         for(int i = 0; i < n; i++) {
 
-            if(p.get(i).getValoare()<=dr && p.get(i).getValoare()>=st) {
+            if(p.get(i).getValoare() <= dr && p.get(i).getValoare() >= st) {
 
                 System.out.print(p.get(i).getValoare());
                 System.out.print(" $ - ");
@@ -269,7 +271,7 @@ public class Main {
 
     /// 9.
     private static void autovehicule_de_config_motor(String c, int n, ArrayList<Autovehicul> p){
-        
+
         for(int i = 0; i < n; i++){
 
             if(p.get(i).getConfig().equals(c)){
