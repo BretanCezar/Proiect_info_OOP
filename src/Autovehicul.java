@@ -1,4 +1,4 @@
-public class Autovehicul implements AutovehiculImpl {
+public abstract class Autovehicul implements AutovehiculImpl {
 
     //PARAMETRII
 
@@ -8,15 +8,13 @@ public class Autovehicul implements AutovehiculImpl {
     protected int numar_roti;
     private float valoare;
     private Motor motor;
-    protected String id;
     private String brand;
     private String model;
     private String culoare;
 
     //CONSTRUCTOR
 
-    Autovehicul(String id, int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa, float valoare){
-        this.id = id;
+    Autovehicul(int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa, float valoare){
         this.an_fabricatie = an_fabricatie;
         this.brand = brand;
         this.putere = putere;
@@ -29,7 +27,6 @@ public class Autovehicul implements AutovehiculImpl {
 
     //GETTERS
 
-    public String getId(){ return this.id; }
     public int getAnFabricatie(){ return this.an_fabricatie; }
     public int getPutere(){ return this.putere; }
     public int getMasa(){ return this.masa; }
@@ -44,7 +41,6 @@ public class Autovehicul implements AutovehiculImpl {
 
     //SETTERS
 
-    public void setId(String id){ this.id = id; }
     public void setAnFabricatie(int an_fabricatie){ this.an_fabricatie = an_fabricatie; }
     public void setPutere(int putere){ this.putere = putere; }
     public void setMasa(int masa){ this.masa = masa; }
@@ -55,10 +51,6 @@ public class Autovehicul implements AutovehiculImpl {
     public void setNumeBrand(String denumire){ this.brand = denumire; }
     public void setModel(String model){ this.model = model; }
     public void setCuloare(String culoare){ this.culoare = culoare; }
-    public float valoareRelativa (Autovehicul a){
-
-        return this.valoare - a.valoare;
-    }
 
 }
 

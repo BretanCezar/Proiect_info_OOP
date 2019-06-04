@@ -9,7 +9,6 @@ public interface AutovehiculImpl {
     float getValoare();
     float getCapacitate();
     String getConfig();
-    String getId();
     String getNumeBrand();
     String getModel();
     String getCuloare();
@@ -24,8 +23,5 @@ public interface AutovehiculImpl {
     void setNumeBrand(String denumire);
     void setModel(String model);
     void setCuloare(String culoare);
-    void setId(String id);
-
-    float valoareRelativa(Autovehicul a);
 
 }

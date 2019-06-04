@@ -24,7 +24,7 @@ public class Main {
     }
 
     /// Functie resetare consola si rescriere a interfetei
-    public static void clearScreen() {
+    private static void clearScreen() {
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -33,6 +33,7 @@ public class Main {
         System.out.print('\n');
 
         try {
+            //noinspection ResultOfMethodCallIgnored
             System.in.read();
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,15 +50,29 @@ public class Main {
         System.out.print('\n');
         System.out.print("4) Autovehiculele de brand-ul x.");
         System.out.print('\n');
-        System.out.print("5) Autovehiculele ce se afla ca valoare intre doua preturi x si y in €.");
+        System.out.print("5) Autovehiculele ce se afla ca valoare intre doua preturi x si y in $.");
         System.out.print('\n');
         System.out.print("6) Cate autovehicule au x roti.");
         System.out.print('\n');
         System.out.print("7) Autovehiculele cu cel mult x ani vechime.");
         System.out.print('\n');
-        System.out.print("8) Autovehiculele cu masa maxima x.");
+        System.out.print("8) Autovehiculele cu masa cel mult x.");
         System.out.print('\n');
-        System.out.print("9) Cate autovehicule au configuratia motorului x");
+        System.out.print("9) Autovehiculele au configuratia motorului x");
+        System.out.print('\n');
+        System.out.print("10) Autovehiculele care au capacitatea cilindrica cel mult x");
+        System.out.print('\n');
+        System.out.print("11) Numarul autovehiculelor de fiecare tip");
+        System.out.print('\n');
+        System.out.print("12) Valoarea totala a autovehiculelor din parcare");
+        System.out.print('\n');
+        System.out.print("13) Sedanurile cu tractiune de tip x");
+        System.out.print('\n');
+        System.out.print("14) TIRurile cu masa remorcii cel mult x");
+        System.out.print('\n');
+        System.out.print("15) ATVurile de teren de tip x");
+        System.out.print('\n');
+        System.out.print("16) Motocicletele de clasa x");
         System.out.print('\n');
     }
 
@@ -179,7 +194,12 @@ public class Main {
         System.out.print('\n');
         for(int i = 0; i < n; i++){
 
-            if(p.get(i).getPutere() >= cai) afisare(i, p);
+            if(p.get(i).getPutere() >= cai) {
+
+                System.out.print(p.get(i).getPutere());
+                System.out.print(" CP - ");
+                afisare(i, p);
+            }
         }
     }
 
@@ -199,7 +219,12 @@ public class Main {
         System.out.print('\n');
         for(int i = 0; i < n; i++) {
 
-            if(p.get(i).getValoare()<=dr && p.get(i).getValoare()>=st) afisare(i, p);
+            if(p.get(i).getValoare()<=dr && p.get(i).getValoare()>=st) {
+
+                System.out.print(p.get(i).getValoare());
+                System.out.print(" $ - ");
+                afisare(i, p);
+            }
         }
     }
 
@@ -233,23 +258,140 @@ public class Main {
         System.out.print('\n');
         for(int i = 0; i < n; i++){
 
-            if(p.get(i).getMasa() <= m) afisare(i, p);
+            if(p.get(i).getMasa() <= m){
+
+                System.out.print(p.get(i).getMasa());
+                System.out.print(" kg - ");
+                afisare(i, p);
+            }
         }
     }
 
     /// 9.
-    private static void nr_autovehicule_de_config_motor(String c, int n, ArrayList<Autovehicul> p){
-
-        int contor = 0;
+    private static void autovehicule_de_config_motor(String c, int n, ArrayList<Autovehicul> p){
+        
         for(int i = 0; i < n; i++){
 
-            if(p.get(i).getConfig().equals(c)) contor++;
+            if(p.get(i).getConfig().equals(c)){
+
+                System.out.print(p.get(i).getConfig());
+                System.out.print(p.get(i).getNrCilindrii());
+                System.out.print(" - ");
+                afisare(i, p);
+            }
         }
-        System.out.print(contor);
-        System.out.print(" autovehicule");
+    }
+
+    /// 10.
+    private static void autovehicule_de_capacit_max(float c, int n, ArrayList<Autovehicul> p){
+
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getCapacitate() <= c){
+
+                System.out.print(p.get(i).getCapacitate());
+                System.out.print(" L - ");
+                afisare(i, p);
+            }
+        }
+    }
+
+    /// 11.
+    private static void nr_autovehicule_de_fiecare_tip(int n, ArrayList<Autovehicul> p){
+
+        int nrs = 0, nrt = 0, nra = 0, nrm = 0;
+        for(int i = 0; i < n; i++){
+
+            switch (p.get(i).getClass().toString()){
+
+                case("class Sedan"): { nrs++; break; }
+                case("class TIR"): { nrt++; break; }
+                case("class ATV"): { nra++; break; }
+                case("class Motocicleta"): { nrm++; break; }
+            }
+        }
+        System.out.print("Sedanuri: ");
+        System.out.print(nrs);
+        System.out.print('\n');
+        System.out.print("TIRuri: ");
+        System.out.print(nrt);
+        System.out.print('\n');
+        System.out.print("ATVuri: ");
+        System.out.print(nra);
+        System.out.print('\n');
+        System.out.print("Motociclete: ");
+        System.out.print(nrm);
         System.out.print('\n');
     }
 
+    /// 12.
+    private static void valoare_totala_parcare(int n, ArrayList<Autovehicul> p){
+
+        long sum = 0;
+        for(int i = 0; i < n; i++){
+
+            sum += p.get(i).getValoare();
+        }
+        System.out.print("Valoarea totala a autovehiculelor din parcare: ");
+        System.out.print(sum);
+        System.out.print(" $");
+        System.out.print('\n');
+    }
+    /// 13.
+    private static void sedanuri_cu_tractiune(String tr, int n, ArrayList<Autovehicul> p){
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getClass() == Sedan.class){
+
+                Sedan s = (Sedan) p.get(i);
+                if(s.getTractiune().equals(tr)) afisare(i, p);
+            }
+        }
+    }
+
+    /// 14.
+    private static void tiruri_cu_masa_remorcii_max(int m, int n, ArrayList<Autovehicul> p){
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getClass() == TIR.class){
+
+                TIR t = (TIR) p.get(i);
+                if(t.getMasaRemorca() <= m) afisare(i, p);
+            }
+        }
+    }
+
+    /// 15.
+    private static void atvuri_de_tip_teren(String t, int n, ArrayList<Autovehicul> p){
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getClass() == ATV.class){
+
+                ATV a = (ATV) p.get(i);
+                if(a.getTipTeren().equals(t)) afisare(i, p);
+            }
+        }
+    }
+
+    /// 16.
+    private static void motociclete_de_clasa(String c, int n, ArrayList<Autovehicul> p){
+
+        System.out.print('\n');
+        for(int i = 0; i < n; i++){
+
+            if(p.get(i).getClass() == Motocicleta.class){
+
+                Motocicleta m = (Motocicleta) p.get(i);
+                if(m.getClasa().equals(c)) afisare(i, p);
+            }
+        }
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -279,7 +421,6 @@ public class Main {
             switch (tip_curent) {
                 case ("S"): {
 
-                    String id = "S";
                     int an_fab = sc.nextInt();
                     String brand = sc.next();
                     String model = sc.next();
@@ -293,13 +434,12 @@ public class Main {
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    Sedan sedan_curent = new Sedan(id, an_fab, brand, model, culoare, motor, putere, tractiune, masa, val);
+                    Sedan sedan_curent = new Sedan(an_fab, brand, model, culoare, motor, putere, tractiune, masa, val);
                     parcare.add(sedan_curent);
                     break;
                 }
                 case ("T"): {
 
-                    String id = "T";
                     int an_fab = sc.nextInt();
                     String brand = sc.next();
                     String model = sc.next();
@@ -313,13 +453,12 @@ public class Main {
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    TIR tir_curent = new TIR(id, an_fab, brand, model, culoare, motor, putere, masa_rem, masa, val);
+                    TIR tir_curent = new TIR(an_fab, brand, model, culoare, motor, putere, masa_rem, masa, val);
                     parcare.add(tir_curent);
                     break;
                 }
                 case ("A"): {
 
-                    String id = "A";
                     int an_fab = sc.nextInt();
                     String brand = sc.next();
                     String model = sc.next();
@@ -333,13 +472,12 @@ public class Main {
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    ATV atv_curent = new ATV(id, an_fab, brand, model, culoare, motor, putere, tip_teren, masa, val);
+                    ATV atv_curent = new ATV(an_fab, brand, model, culoare, motor, putere, tip_teren, masa, val);
                     parcare.add(atv_curent);
                     break;
                 }
                 case ("M"): {
 
-                    String id = "M";
                     int an_fab = sc.nextInt();
                     String brand = sc.next();
                     String model = sc.next();
@@ -353,7 +491,7 @@ public class Main {
                     int masa = sc.nextInt();
                     float val = sc.nextFloat();
 
-                    Motocicleta moto_curent = new Motocicleta(id, an_fab, brand, model, culoare, motor, putere, clasa, masa, val);
+                    Motocicleta moto_curent = new Motocicleta(an_fab, brand, model, culoare, motor, putere, clasa, masa, val);
                     parcare.add(moto_curent);
                     break;
                 }
@@ -447,7 +585,60 @@ public class Main {
                     System.out.print("Configuratie motor [L/V/W/B]: ");
                     String c = cin.next();
                     System.out.print('\n');
-                    nr_autovehicule_de_config_motor(c, nrVehicule, parcare);
+                    autovehicule_de_config_motor(c, nrVehicule, parcare);
+                    break;
+                }
+                case(10):{
+
+                    System.out.print('\n');
+                    System.out.print("Capacitatea cilindrica maxima in litri: ");
+                    float c = cin.nextFloat();
+                    System.out.print('\n');
+                    autovehicule_de_capacit_max(c, nrVehicule, parcare);
+                    break;
+                }
+                case(11):{
+
+                    System.out.print('\n');
+                    nr_autovehicule_de_fiecare_tip(nrVehicule, parcare);
+                    break;
+                }
+                case(12):{
+
+                    System.out.print('\n');
+                    valoare_totala_parcare(nrVehicule, parcare);
+                    break;
+                }
+                case(13):{
+
+                    System.out.print('\n');
+                    System.out.print("Tip tractiune [FWD/RWD/AWD]: ");
+                    String tr = cin.next();
+                    sedanuri_cu_tractiune(tr, nrVehicule, parcare);
+                    break;
+                }
+                case(14):{
+
+                    System.out.print('\n');
+                    System.out.print("Masa remorcii maxima: ");
+                    int m = cin.nextInt();
+                    tiruri_cu_masa_remorcii_max(m, nrVehicule, parcare);
+                    break;
+                }
+                case(15):{
+
+                    System.out.print('\n');
+                    System.out.print("Tip teren [Tarmac/Offroad]: ");
+                    String t = cin.next();
+                    atvuri_de_tip_teren(t, nrVehicule, parcare);
+                    break;
+                }
+                case(16):{
+
+                    System.out.print('\n');
+                    System.out.print("Clasa motociclete [Touring/Sport]: ");
+                    String c = cin.next();
+                    motociclete_de_clasa(c, nrVehicule, parcare);
                     break;
                 }
                 default:{
@@ -457,7 +648,6 @@ public class Main {
             }
         }
         while(optiune!=0);
-
     }
 
 }

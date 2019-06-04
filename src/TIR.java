@@ -2,9 +2,9 @@ class TIR extends Autovehicul implements TIRImpl {
 
     private int masa_remorca;
 
-    TIR(String id, int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa_remorca, int masa, float valoare) {
+    TIR(int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, int masa_remorca, int masa, float valoare) {
 
-        super(id, an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
+        super(an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
         this.numar_roti = 6;
         this.masa_remorca = masa_remorca;
     }

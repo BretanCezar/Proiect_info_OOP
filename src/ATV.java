@@ -2,9 +2,9 @@ class ATV extends Autovehicul implements ATVImpl {
 
     private String tip_teren;
 
-    ATV (String id, int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, String tip_teren, int masa, float valoare) {
+    ATV(int an_fabricatie, String brand, String model, String culoare, Motor motor, int putere, String tip_teren, int masa, float valoare) {
 
-        super(id, an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
+        super(an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
         this.numar_roti = 4;
         this.tip_teren = tip_teren;
 
