@@ -61,7 +61,7 @@ class Motor {
     float capacitate;
 }
 
-class FrecvCuloare {
+class FrecvCuloare { // Structura ce retine de cate ori apare fiecare culoare
 
     int rosu;
     int portocaliu;
