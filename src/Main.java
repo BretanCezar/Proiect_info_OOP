@@ -403,7 +403,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        File input = new File("D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); // Se declara fisierul din care se citesc autovehiculele,
+        File input = new File("D:\\Proiecte info\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); // Se declara fisierul din care se citesc autovehiculele,
                                                                                                                           // specificandu-se PATH-ul
         // D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt
         Scanner sc = new Scanner(input); // Se declara cititorul de fisier, numit Scanner
