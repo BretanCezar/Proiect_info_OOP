@@ -1,42 +1,20 @@
-40
-S 2007 VW Golf Argintiu L 4 1.3 165 FWD 1650 7500
-S 2005 Opel Astra Negru L 4 1.6 140 RWD 1800 6000
-S 2008 BMW -
-S 2007 Volvo -
-S 2017 VW -
-S 2016 Mercedes-Benz -
-S 2008 Ford -
-S 2010 BMW -
-S 2015 Mercedes-Benz -
-S 2015 BMW -
-M 2009 Honda CBR1100 Rosu V 2 1.1 120 Sport 500 4500
-M 2001 Harley-Davidson - Negru
-M 2010 Kawasaki - Verde
-M 2017 Ducati - Rosu
-M 2004 Suzuki - Galben
-M 2007 Ducati - Alb
-M 2011 Harley-Davidson - Galben
-M 2005 Kawasaki - Verde
-M 2006 Harley-Davidson - Negru
-M 2008 Kawasaki - Verde
-T 2008 MAN - Negru
-T 2009 MERCEDES-BENZ - Alb
-T 2018 VOLVO - Galben
-T 2015 IVECO - Rosu
-T 2011 IVECO - Negru
-T 2015 MERCEDES-BENZ - Galben
-T 2008 VOLVO - Alb
-T 2013 RENAULT - Negru
-T 2014 MAN - Argintiu
-T 2011 VOLVO - Rosu
-A 2009 Stels - Alb
-A 2001 Yamaha - Rosu
-A 2015 Kawasaki - Verde
-A 2018 Kawasaki - Albastru
-A 2016 Yamaha - Alb
-A 2008 Stels - Galben
-A 2009 Honda - Rosu
-A 2008 Stels - Galben
-A 2011 Honda - Verde
-A 2017 Yamaha - Alb
+17
+S 2007 VW Golf Argintiu L 4 1,3 165 FWD 1650 7500
+S 2005 Opel Astra Negru L 4 1,6 140 RWD 1800 6000
+S 1986 BMW M3 Albastru V 6 2,3 195 FWD 1500 7000
+S 2010 Volvo S40 Alb L 5 2,5 227 AWD 1550 6500
+S 2016 Mercedes-AMG GT-R Verde V 8 4,2 559 RWD 1900 80000
+S 2003 Ford Focus Alb L 4 2,0 200 FWD 1400 6000
+M 2009 Honda CBR1100 Rosu V 2 1,1 120 Sport 300 4500
+M 2001 Harley-Davidson FXDR114 Negru V 2 1,8 114 Sport 450 7000
+M 2018 Kawasaki NINJA650 Negru L 2 0,6 68 Touring 200 5630
+M 2017 Ducati XDIAVEL Rosu V 2 1,2 156 Touring 220 21000
+M 2003 Suzuki GSXR600 Mov L 4 0,6 100 Sport 200 6700
+T 2014 Mercedes-Benz UnimogU5023 Argintiu V 8 7,0 230 1500 7000 100000
+T 2016 VOLVO IronKnight Negru W 12 9,0 2250 1200 4500 550000
+T 2015 IVECO NewTrakker Verde V 10 7,5 450 2000 30000 180000
+A 2016 Stels 800GGuepard Galben V 6 2,0 300 Offroad 850 8900
+A 2018 Kawasaki BruteForce300 Negru L 1 0,3 21 Tarmac 600 4200
+A 2019 Yamaha Grizzly350 Verde L 1 0,3 50 Offroad 120 6000
+
 
