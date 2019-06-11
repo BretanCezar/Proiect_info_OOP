@@ -403,16 +403,17 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        File input = new File("D:\\Proiecte info\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); // Se declara fisierul din care se citesc autovehiculele,
+        File input = new File("D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt"); // Se declara fisierul din care se citesc autovehiculele,
                                                                                                                           // specificandu-se PATH-ul
         // D:\\Documentz\\Cool info stuff\\Proiect_info_OOP\\Proiect_info_OOP\\src\\parcare.txt
+        // D:\Proiecte info\Proiect_info_OOP\Proiect_info_OOP\src\parcare.txt
         Scanner sc = new Scanner(input); // Se declara cititorul de fisier, numit Scanner
 
 
         /*
         MOD CITIRE:
 
-        ['TIP'] AN "BRAND" "MODEL" "CULOARE" 'CONFIG' NR_CILINDRII CAPACITATE PUTERE CUTIE_VITEZE ["PARAMETRU_SPECIFIC"] MASA VALOARE
+        ['TIP'] AN "BRAND" "MODEL" "CULOARE" 'CONFIG' NR_CILINDRII CAPACITATE PUTERE ["PARAMETRU_SPECIFIC"] MASA VALOARE
 
         ['TIP'] -> Se scrie S/T/A/M, in functie de subclasa autovehiculului ce urmeaza sa fie citit
 

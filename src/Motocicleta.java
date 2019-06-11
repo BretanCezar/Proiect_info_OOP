@@ -7,7 +7,6 @@ class Motocicleta extends Autovehicul implements MotocicletaImpl {
         super(an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
         this.numar_roti = 2;
         this.clasa = clasa;
-
     }
 
     public String getClasa(){ return this.clasa; }

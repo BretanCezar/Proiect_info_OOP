@@ -7,7 +7,6 @@ class ATV extends Autovehicul implements ATVImpl {
         super(an_fabricatie, brand, model, culoare, motor, putere, masa, valoare);
         this.numar_roti = 4;
         this.tip_teren = tip_teren;
-
     }
 
     public String getTipTeren(){ return this.tip_teren; }

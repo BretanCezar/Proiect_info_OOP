@@ -9,7 +9,8 @@ class TIR extends Autovehicul implements TIRImpl {
         this.masa_remorca = masa_remorca;
     }
 
-        public int getMasaRemorca(){ return this.masa_remorca; }
+    public int getMasaRemorca(){ return this.masa_remorca; }
 
-        public void setMasaRemorca(int masa_remorca){ this.masa_remorca = masa_remorca; }
+    public void setMasaRemorca(int masa_remorca){ this.masa_remorca = masa_remorca; }
+
 }

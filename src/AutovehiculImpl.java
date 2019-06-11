@@ -1,6 +1,5 @@
 public interface AutovehiculImpl {
 
-
     int getAnFabricatie();
     int getPutere();
     int getMasa();
